@@ -1,9 +1,15 @@
 package object Recursion {
+  /* 
+   * Ejercicio 2: pascal
+   * */
   def pascal(c: Int, r: Int): Int ={
     if (c == 0 || c == r) 1 else pascal(c - 1, r - 1) + pascal(c, r - 1)
   }
 
   def balanceado(chars: List [Char]):Boolean = {
+    /* 
+     * Ejercicio 3: balanceado
+     * */
     def balanceadoAux(chars: List[Char], count: Int):Boolean ={
      if(count != 0 && chars.isEmpty) false else true
     }
