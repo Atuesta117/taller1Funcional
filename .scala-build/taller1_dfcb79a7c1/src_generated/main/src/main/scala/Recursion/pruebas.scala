@@ -5,9 +5,16 @@ final class pruebas$_ {
 def args = pruebas_sc.args$
 def scriptPath = """src/main/scala/Recursion/pruebas.sc"""
 /*<script>*/
-import Recursion.{pascal}
+import Recursion.{pascal, balanceado}
 
 println(pascal(2, 3))
+println( balanceado("(hola) como estas? ())(".toList) )
+println( balanceado("(hola) como estas? ()".toList) ) 
+println( balanceado("(hola) como estas? ()(".toList) ) 
+println( balanceado("(hola) como estas? ())".toList) ) 
+
+
+
 
 /*</script>*/ /*<generated>*//*</generated>*/
 }
