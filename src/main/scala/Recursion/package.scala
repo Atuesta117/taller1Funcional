@@ -1,4 +1,12 @@
 package object Recursion {
+
+  /* 
+    * Ejercicio 1: potencia
+    * */
+  def potencia(m: Int, n: Int): Int = {
+    if (n == 0) 1 else m * potencia(m, n - 1)
+  }
+
   /* 
    * Ejercicio 2: pascal
    * */
@@ -23,4 +31,17 @@ package object Recursion {
     }
       validar(chars, 0)
   }
+
+  /* 
+    * Ejercicio 4: Cambio de monedas
+    * */
+    def cambioMonedas(total: Int, denom: List[Int]): Int = {
+    if(total < 0) 0
+    else if(total == 0) 1
+    else(
+        if(total >0 && denom.isEmpty) 0  
+        else cambioMonedas(total - denom.head, denom) + cambioMonedas(total, denom.tail)
+        )
+  }
+
 }
