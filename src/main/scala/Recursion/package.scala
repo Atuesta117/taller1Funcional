@@ -22,7 +22,8 @@ package object Recursion {
     }
 
       def validar(chars: List[Char], count: Int): Boolean = {
-      if(chars.isEmpty) balanceadoAux(chars, count)
+      if(chars.isEmpty && count !=0) false
+      else if(chars.isEmpty && count == 0) true
       else if(chars.head == '(') validar(chars.tail, count + 1)
       else if(chars.head == ')' && count > 0) validar(chars.tail, count - 1)
       else if (chars.head == ')' && count == 0) false
