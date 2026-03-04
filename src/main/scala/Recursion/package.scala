@@ -43,10 +43,9 @@ package object Recursion {
    *
    */
   def cambioMonedas(total: Int, denom: List[Int]): Int = {
-    if (total < 0) 0
-    else if (total == 0) 1
+    if (total < 0 || total > 0 && denom.isEmpty) 0
     else (
-      if (total > 0 && denom.isEmpty) 0
+      if (total == 0) 1
       else
         cambioMonedas(total - denom.head, denom) + cambioMonedas(
           total,
