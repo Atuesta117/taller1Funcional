@@ -19,11 +19,21 @@ package object Recursion {
   def balanceado(chars: List[Char]): Boolean = {
     def validar(chars: List[Char], count: Int): Boolean = {
       if (chars.isEmpty && count != 0) false
-      else if (chars.isEmpty && count == 0) true
-      else if (chars.head == '(') validar(chars.tail, count + 1)
-      else if (chars.head == ')' && count > 0) validar(chars.tail, count - 1)
-      else if (chars.head == ')' && count == 0) false
-      else validar(chars.tail, count)
+      else {
+        if (chars.isEmpty && count == 0) true
+        else {
+          if (chars.head == '(') validar(chars.tail, count + 1)
+          else {
+            if (chars.head == ')' && count > 0) validar(chars.tail, count - 1)
+            else {
+              if (chars.head == ')' && count == 0) false
+              else validar(chars.tail, count)
+
+            }
+          }
+
+        }
+      }
     }
     validar(chars, 0)
   }
